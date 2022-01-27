@@ -1,0 +1,12 @@
+name: jcvi
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.6
+  - jcvi=1.1
+  - last=1257
+  - pip
+  - pip:
+    - more_itertools

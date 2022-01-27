@@ -1,0 +1,25 @@
+species:
+  source:
+    name: pine
+  target:
+    name: spruce
+
+cds:
+  type: nucl
+  pine: resources/cds/hq_transcripts_fixed_headers.fasta.transdecoder.cds
+  spruce: resources/cds/Spruce_all_hq_transcripts_clean_headers.fasta.transdecoder.cds
+
+gff:
+  pine: resources/gmap/pine-isoseq_vs_pine.gff3.uniq
+  spruce: resources/gmap/spruce-isoseq_vs_spruce.gff3.uniq
+
+gff_to_bed:
+  feature: mRNA
+  name_attr: Name
+
+# Set the name regex to null or an empty string in order to
+# disable the cleaning of fasta headers.
+clean_fasta_headers:
+  name_regex:
+    spruce: 'transcript_\d+'
+    pine: 'UnnamedSample_HQ_transcript_\d+'
