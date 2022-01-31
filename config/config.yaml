@@ -4,6 +4,10 @@ species:
   target:
     name: spruce
 
+genome:
+  pine: resources/genome/coverage_purged_soft_pine-hifi-27cells-no-purge_m250-r500_manual2.purged.fa.gz
+  spruce: resources/genome/pabies-2.0_chromosomes_and_unplaced.fa.gz
+
 cds:
   type: nucl
   pine: resources/cds/hq_transcripts_fixed_headers.fasta.transdecoder.cds

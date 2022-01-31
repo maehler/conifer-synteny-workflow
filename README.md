@@ -4,6 +4,7 @@ This workflow aims to identify synteny between pine and spruce.
 
 ## Input
 
+- Genome fasta files (indexed)
 - GFF3 files with gene annotations
 - CDS fasta files
 

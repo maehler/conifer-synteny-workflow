@@ -25,3 +25,20 @@ rule run_jcvi_ortholog:
             {params.species1} \\
             {params.species2}
         """
+
+rule chrom_dotplot:
+    input:
+        anchors='results/synteny/{species1}.{species2}.anchors' \
+                .format(species1=config['species']['source']['name'], \
+                    species2=config['species']['target']['name']),
+        source_bed='results/synteny/{species1}.bed',
+        target_bed=lambda w: [f'results/synteny/{x}.bed' \
+                              for x in get_species() \
+                              if x != w.species1],
+        source_fai=lambda w: get_genome_fasta_index(w.species1),
+        target_fai=lambda w: get_genome_fasta_index(*[x for x in get_species() if x != w.species1])
+    output:
+        png='results/synteny/plots/{species1}_{seq}_vs_{species2}.png'
+    log: 'log/{species1}_{seq}_vs_{species2}_chrom_dotplot.log'
+    conda: '../envs/python.yaml'
+    script: '../scripts/chrom_dotplot.R'

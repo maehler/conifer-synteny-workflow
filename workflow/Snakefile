@@ -1,5 +1,19 @@
 configfile: 'config/config.yaml'
 
+wildcard_constraints:
+    species='{}|{}'.format(
+        config['species']['source']['name'],
+        config['species']['target']['name']
+    ),
+    species1='{}|{}'.format(
+        config['species']['source']['name'],
+        config['species']['target']['name']
+    ),
+    species2='{}|{}'.format(
+        config['species']['source']['name'],
+        config['species']['target']['name']
+    )
+
 include: 'rules/common.smk'
 include: 'rules/preprocess.smk'
 include: 'rules/synteny.smk'

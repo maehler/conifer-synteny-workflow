@@ -11,3 +11,8 @@ def get_clean_cds(wildcards):
     else:
         return 'results/cds/{species}_cds_clean_headers.fasta'
 
+def get_genome_fasta(species):
+    return config['genome'][species]
+
+def get_genome_fasta_index(species):
+    return '{}.fai'.format(get_genome_fasta(species))
