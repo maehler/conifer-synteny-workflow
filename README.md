@@ -23,4 +23,12 @@ In the config file, you can specify which it is under `cds.type`, and the option
 
 ## Output
 
-TBD
+The main output right now are plots that visualise the synteny between the two species.
+These can be created using using snakemake with the command
+
+```
+snakemake --use-conda -c1 results/synteny/plots/<species1>_<seq>_vs_<species2>.png
+```
+
+where `<species1>` is the source species, `<seq>` is the sequence in the source species that should be visualised, and `<species2>` is the target species.
+Every sequence in the target species that is represented in the synteny will be presented in the visualisation.
